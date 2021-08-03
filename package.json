@@ -41,6 +41,7 @@
     "imagemin-mozjpeg": "^8.0.0",
     "imagemin-pngquant": "5.0.1",
     "lodash.template": "^4.5.0",
+    "node-sass": "^6.0.1",
     "pngquant-bin": "3.1.1"
   },
   "dependencies": {}

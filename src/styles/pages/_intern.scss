@@ -1,0 +1,226 @@
+.intern-page {
+
+    section {
+        margin-bottom: 100px;
+    }
+
+    .brand-color {
+        color: $brand-color;
+    }
+
+    .header {
+        .header-banner {
+            display: flex;
+            align-items: center;
+            min-height: 845px;
+            background-image: url("./../assets/images/banner-intern.jpg");
+            background-color: #fff;  
+            background-position: center; 
+            background-repeat: no-repeat; 
+            background-size: cover;
+
+            @media (max-width: 767px){
+                flex-direction: column-reverse;
+                min-height: auto;
+                background-image: none;
+            }
+
+            .banner-subject {
+                display: none;
+
+                @media (max-width: 767px){
+                    display: block;
+                }
+            }
+            
+            h1 {
+                max-width: 550px;
+                width: 100%;
+                font-size: 80px;
+                line-height: 105.74px;
+                text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+                @media (max-width: 991px){
+                    font-size: 70px;
+                }
+
+                @media (max-width: 767px){
+                    font-size: 40px;
+                    line-height: 50px;
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+
+    .ig-post {
+        margin-bottom: 0;
+        background-color: $brand-dark;
+
+        .images {
+            display: flex;
+            
+            @media (max-width: 767px){
+                display: block;
+            }
+
+            .item-3 {
+                width: 33.333333%;
+                padding-top: 25%;
+
+                @media (max-width: 767px){
+                    width: 100%;
+                    padding-top: 75%;
+                }
+            }
+
+            .item-4 {
+                width: 25%;
+
+                @media (max-width: 767px){
+                    width: 100%;
+                    padding-top: 75%;
+                }
+            }
+
+            .items {
+                position: relative;
+               
+                img {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        }
+    }
+
+    .managing-expectations {
+        position: relative;
+        padding: 110px 0 190px 0;
+        background-color: $brand-dark;
+        z-index: -2;
+
+        @media (max-width: 991px){
+            padding: 110px 0 110px 0;
+        }
+
+        .grid-row {
+            display: flex;
+
+            @media (max-width: 991px){
+                display: block;
+            }
+
+            .left {
+                width: 40%;
+
+                @media (max-width: 991px){
+                    width: 100%;
+                }
+            }
+
+            .right {
+                width: 60%;
+
+                @media (max-width: 991px){
+                    padding-top: 20px;
+                    width: 100%;
+                }
+            }
+            
+        }
+
+        .ellipse {
+            position: absolute;
+            right: 0;
+            top: 35px;
+            z-index: -1;
+        }
+
+        .arch {
+            position: absolute;
+            bottom: 100px;
+            left: 0;
+            z-index: -1;
+
+            @media (max-width: 991px){
+                bottom: 0;
+            }
+        }
+
+        h1 {
+            color: $brand-color;
+            
+            @media (max-width: 1199px){
+                font-size: 60px;
+            }
+
+            @media (max-width: 991px){
+                font-size: 40px;
+            }
+        }
+
+        p {
+            color: #fff;
+        }
+    }
+
+    .be-updated {
+        margin-bottom: 0;
+        padding: 75px 0;
+        background-color: $brand-dark;
+
+        h2 {
+            color: #fff;
+        }
+
+        p {
+            margin: 0;
+            color: #fff;
+        }
+
+        br {
+            display: none;
+
+            @media (max-width: 767px){
+                display: block;
+            }
+        }
+    }
+
+    .solution {
+        position: relative;
+        z-index: 1;
+
+        img {
+            z-index: -1;
+        }
+
+        h2 {
+            margin: 0 auto;
+            padding: 125px 0;
+            font-size: 70px;
+            text-align: center;
+            max-width: 915px;
+
+            @media (max-width: 767px){
+                font-size: 40px;
+            }
+        }
+
+        .arch-inverted {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+        }
+
+        .ellipse-purple {
+            position: absolute;
+            right: 0;
+        }
+    }
+}

@@ -5,3 +5,5 @@
 // -----------------------------------------------------------------------------
 
 @include font-face($font-opensans, $base-url + 'fonts/', 'opensans-regular', 'opensans-regular');
+@include font-face($font-futura-heavy, $base-url + 'fonts/', 'FuturaPT-Heavy', 'FuturaPT-Heavy');
+@include font-face($font-monstserrat-regular, $base-url + 'fonts/', 'Montserrat-Regular', 'Montserrat-Regular');

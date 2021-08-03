@@ -10,6 +10,9 @@
 ## Changelog
 ### 1.3.0
   * add support to ES6
+### you may run if node-sass has error
+  * npm uninstall --save-dev node-sass
+  * npm install --save-dev node-sass
 ### 1.2.2
   * fix error where building without going through yarn dev fails
   * added `.prettierrc`
