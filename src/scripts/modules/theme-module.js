@@ -19,7 +19,7 @@ AppName.Modules.ThemeModule = (function () {
       apiTimeout: 5000,
       accessToken: 'IGQVJYQTFpXzRVVVkzT1ZA0cXl6RTctNWgyQUE2RC1uQi1FNzZAVdTNsdXBfYXptUW5Pa19wQjVYbW5vSXJ2a3dLNGMyNngxZA0tsQ19MeEZAta2daT3dESlR6V1dhMXo4OFZA6X2o5TmZAhUUJ5OUNnLVMzSwZDZD',
       target: 'instafeed',
-      template:'<div class="items item-3"><a href="{{link}}" target="_blank"><img src="{{image}}"></a></div>',
+      template:'<div class="items item-3"><a href="{{link}}" target="_blank"><img src="{{image}}"><div class="rollover"></div></a></div>',
       limit: 3,
     });
 
@@ -28,7 +28,7 @@ AppName.Modules.ThemeModule = (function () {
       apiTimeout: 5000,
       accessToken: 'IGQVJYQTFpXzRVVVkzT1ZA0cXl6RTctNWgyQUE2RC1uQi1FNzZAVdTNsdXBfYXptUW5Pa19wQjVYbW5vSXJ2a3dLNGMyNngxZA0tsQ19MeEZAta2daT3dESlR6V1dhMXo4OFZA6X2o5TmZAhUUJ5OUNnLVMzSwZDZD',
       target: 'instafeed_footer',
-      template:'<div class="items item-3"><a href="{{link}}" target="_blank"><img src="{{image}}"></a></div>',
+      template:'<div class="items item-3"><a href="{{link}}" target="_blank"><img src="{{image}}"><div class="rollover"></div></a></div>',
       limit: 7,
     });
 

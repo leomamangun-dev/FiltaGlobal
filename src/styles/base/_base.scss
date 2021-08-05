@@ -75,6 +75,24 @@ img {
   padding-left: 15px;
 }
 
+.btn {
+  padding: 8px 26px;
+  border-radius: 25px;
+}
+
+.btn-brand {
+  font-family: $font-futura-heavy;
+  color: #fff;
+  background-color: $blue;
+  border-color: $blue;
+
+  &:hover,
+  &:focus {
+    background-color: #0e7bb5;
+    color: #fff;
+  }
+}
+
 /**
  * Basic styles for input fields
  */
