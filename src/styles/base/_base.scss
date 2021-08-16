@@ -29,7 +29,7 @@ a {
 }
 
 h1 {
-  font-size: 70px;
+  font-size: 72px;
   font-family: $font-futura-heavy;
 
   @media (max-width: 991px){
@@ -45,6 +45,20 @@ h2 {
   font-size: 55px;
   font-family: $font-futura-heavy;
 
+  @media (max-width: 767px){
+    font-size: 40px;
+  }
+}
+
+
+.section-title {
+  font-size: 72px;
+  font-family: $font-futura-heavy;
+
+  @media (max-width: 991px){
+    font-size: 60px;
+  }
+  
   @media (max-width: 767px){
     font-size: 40px;
   }
@@ -90,6 +104,33 @@ img {
   &:focus {
     background-color: #0e7bb5;
     color: #fff;
+  }
+}
+
+.btn-white {
+  font-family: $font-futura-heavy;
+  color: $brand-dark;
+  background-color: #fff;
+  border-color: #fff;
+}
+
+.brand-color {
+  color: $brand-color;
+}
+
+.mobile {
+  display: none;
+
+  @media (max-width: 767px){
+      display: block;
+  }
+}
+
+.desktop {
+  display: block;
+
+  @media (max-width: 767px){
+      display: none;
   }
 }
 

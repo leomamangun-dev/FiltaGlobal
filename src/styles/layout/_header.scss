@@ -3,3 +3,22 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+
+
+nav.navbar {
+    padding: 25px 0 20px;
+    background-color: $brand-dark;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+
+    .lets-talk {
+        padding: 5px;
+        min-width: 170px;
+        font-size: 22px;
+
+        @media (max-width: 767px) {
+            min-width: 115px;
+            font-size: 18px;
+        }
+    }
+}
