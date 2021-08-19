@@ -57,9 +57,30 @@ footer {
             }
 
             a {
+                position: relative;
                 color: $text-color;
                 font-size: 16px;
                 text-decoration: none;
+
+                &.has-item {
+
+                    &.active {
+
+                        
+                        &:after {
+                            transform: rotate(90deg);
+                        }
+                    }
+
+                    &:after {
+                        content: url('../assets/images/footer-arrow.png');
+                        position: absolute;
+                        top: 50%;
+                        padding-left: 5px;
+                        transform: translateY(-50%);
+                    }
+
+                }
     
                 &:hover {
                     color: $brand-color;
@@ -71,6 +92,23 @@ footer {
             padding: 0;
             li {
                 list-style-type: none;
+
+
+            }
+        }
+
+        .footer-dropdown {
+            height: 0;
+            transition: all 0.2s;
+            overflow: hidden;
+
+            &.active {
+                height: auto;
+            }
+
+            &-item {
+                display: block;
+                margin-left: 10px;
             }
         }
 

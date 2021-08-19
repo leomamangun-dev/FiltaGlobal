@@ -121,7 +121,7 @@ img {
 .mobile {
   display: none;
 
-  @media (max-width: 767px){
+  @media (max-width: 991px){
       display: block;
   }
 }
@@ -129,7 +129,7 @@ img {
 .desktop {
   display: block;
 
-  @media (max-width: 767px){
+  @media (max-width: 991px){
       display: none;
   }
 }

@@ -11,14 +11,157 @@ nav.navbar {
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 
+    @media ( max-width: 991px ) {
+        padding: 0;
+    }
+
+    .nav-container {
+        @media ( max-width: 991px ) {
+            max-width: 100%;
+        }
+    }
+
+    .navbar-brand img{
+        @media ( max-width: 991px ) {
+            max-width: 70px;
+        }
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,255,255, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+
+    .branding {
+        @media ( max-width: 991px ) {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            background-color: $brand-dark;
+            padding: 25px 20px 25px 20px;
+            border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
+        }
+    }
+
+    .nav-contents {
+        justify-content: flex-end;
+        transition: top .3s cubic-bezier(.17,.04,.03,.94);
+
+        @media ( max-width: 991px ) {
+            position: fixed;
+            top: -1100px;
+            right: 0px ;
+            left: 0px ;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100%;
+            width: 100%;
+            background-color: $brand-dark;
+            transform: none;
+            z-index: -1;
+        }
+
+        &.show {
+            top: 0;
+        }
+
+        .navbar-nav {
+            margin-right: 3%;
+
+            @media ( max-width: 1199px ) {
+                margin-right: 0;
+            }
+
+            @media ( max-width: 991px ) {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            li.nav-item {
+                padding: 0 15px;
+
+                @media ( max-width: 1199px ) {
+                    padding: 10;
+                }
+
+                &.active .nav-link {
+                    color: $brand-color;
+                }
+            }
+
+            .nav-link {
+                position: relative;
+                font-family: $font-futura-heavy;
+                font-size: 22px;
+                color: #fff;
+
+                @media ( max-width: 1199px ) {
+                    font-size: 20px;
+                }
+                
+                @media ( max-width: 991px ) {
+                    font-size: 30px;
+                }
+
+                &.dropdown-toggle:after {
+                    content: url('../assets/images/nav-arrow.png');
+                    position: absolute;
+                    top: 10px;
+                    transform: translate(-50%, -50%);
+                    border: 0;
+                }
+            }
+
+            .dropdown-menu {
+                padding: 10px;
+                border-radius: 20px;
+
+                @media ( max-width: 991px ) {
+                    background-color: transparent;
+                    text-align: center;
+                    border: none;
+                }
+            }
+
+            .dropdown-item {
+                font-family: $font-futura-heavy;
+                font-size: 22px;
+
+                @media ( max-width: 1199px ) {
+                    font-size: 20px;
+                }
+
+                @media ( max-width: 991px ) {
+                    color: #fff;
+
+                    &:hover {
+                        background-color: transparent;
+                    }
+                }
+
+                &:hover {
+                    color: $brand-color;
+                }
+
+                &:active {
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+
     .lets-talk {
         padding: 5px;
         min-width: 170px;
         font-size: 22px;
 
         @media (max-width: 767px) {
-            min-width: 115px;
-            font-size: 18px;
+            min-width: 200px;
+            font-size: 28px;
         }
     }
 }
