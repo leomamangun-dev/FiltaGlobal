@@ -92,7 +92,6 @@ AppName.Modules.ThemeModule = (function () {
     });
 
     // Image Hover - About Us
-
     $('.team .image img').on('mouseover', function() {
       var self = this,
           i = 0,
