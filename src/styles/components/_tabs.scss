@@ -1,0 +1,199 @@
+.tabs-section {
+    padding-bottom: 150px;
+    overflow: hidden;
+
+    @media (max-width: 991px){
+        padding-bottom: 50px;
+    }
+
+    .tabs-holder {
+        display: flex;
+        margin-top: 100px;
+
+        @media (max-width: 991px){
+            display: none;
+        }
+    }
+
+    .nav-pills-holder {
+        display: flex;
+        justify-content: flex-end;
+        padding: 0 20px;
+        width: 40%;
+
+        .nav-pills {
+            min-width: 450px;
+            margin: 0 auto;
+
+            @media (max-width: 1199px){
+                min-width: 350px;
+            }
+        }
+    }
+
+    .tab-content-holder {
+        width: 60%;
+
+        .pill-content {
+            padding: 30px;
+            background-color: $cards-grey;
+            border-top-left-radius: 12px;
+            border-bottom-left-radius: 12px;
+        }
+    }
+
+    .nav-link {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        padding: 30px;
+        margin: 10px;
+        font-family: $font-futura-heavy;
+        font-size: 40px;
+        color: #fff;
+        letter-spacing: -0.05em;
+        border-radius: 12px;
+        line-height: 51px;
+
+        @media (max-width: 1199px){
+            font-size: 36px;
+            line-height: 41px;
+        }
+        
+        &:hover {
+            color: #fff;
+        }
+
+        &.active {
+            margin: 0;
+        }
+
+        &.yellow {
+            background-color: $brand-color !important;
+        }
+
+        &.green {
+            background-color: $green !important;
+        }
+
+        img {
+            max-width: 130px;
+
+            @media (max-width: 1199px){
+                max-width: 100px;
+            }  
+        }
+    }
+
+    ul {
+        list-style-image: url('../assets/images/check.png');
+
+        li {
+            padding-top: 13px;
+            padding-bottom: 13px;
+            font-size: 18px;
+            line-height: 22px;
+            border-bottom: 1px solid $light-mid-grey;
+
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+    }
+
+    .accordion-holder {
+        display: none;
+        padding-top: 40px;
+
+        @media (max-width: 991px){
+            display: block;
+            padding-top: 20px;
+        }
+    }
+
+    .card {
+        padding: 0;
+        margin-bottom: 30px;
+        border: 0;
+        background-color: #dfdbdb;
+        border-radius: 12px;
+        box-shadow: 0px 2px 3px 1px rgba(0, 0, 0, 0.1);
+
+        .card-btn-wrapper {
+            width: 100%;
+        }
+
+        .card-btn {
+            padding: 20px 60px 20px 20px;
+        }
+
+        .card-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding: 30px;
+            font-family: $font-futura-heavy;
+            font-size: 40px;
+            color: $brand-dark;
+            letter-spacing: -0.05em;
+            border-radius: 12px;
+            line-height: 51px;
+            background-color: #dfdbdb;
+
+            @media (max-width: 767px){
+                padding: 0px;
+                font-size: 30px;
+                line-height: 34px;
+            }
+
+            &:after {
+                content: url('../assets/images/arrow-up.png');
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                width: 70px;
+                -webkit-filter: invert(100%);
+                filter: invert(100%);
+
+                @media (max-width: 767px){
+                    right: -20px;
+                }
+            }
+
+            img {
+                margin: 30px;
+                -webkit-filter: invert(100%);
+                filter: invert(100%);
+
+                @media (max-width: 767px){
+                    margin: 20px;
+                    width: 80px;
+                }  
+            }
+
+            &.collapsed {
+                color: #fff;
+
+                &:after {
+                    content: url('../assets/images/arrow-down.png');
+                    -webkit-filter: none;
+                    filter: none;
+                }
+
+                img {
+                    -webkit-filter: none;
+                    filter: none;
+                }
+
+                &.yellow {
+                    background-color: $brand-color;
+                }
+        
+                &.green {
+                    background-color: $green;
+                }
+            }
+        }
+    }
+}

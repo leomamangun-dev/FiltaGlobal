@@ -1,0 +1,148 @@
+.circle {
+
+    background-color: $brand-dark;
+
+    &.large {
+
+        .outer-circle {
+            padding: 280px 0;
+            background-image: url('../assets/images/large-circle-bg.png');
+
+            @media (max-width: 991px){
+                padding: 200px 0;
+                background-image: url('../assets/images/mobile-circle.png');
+            }
+        }
+
+        .inner-circle-wrapper {
+            width: auto;
+            height: auto;
+
+            &:hover {
+                width: auto;
+                height: auto;
+            }
+
+            .inner-circle {
+                width: auto;
+                height: auto;
+                background-color: transparent;
+
+                .circle-title {
+                    span {
+                        display: block;
+
+                        @media (max-width: 991px){
+                            display: initial;
+                        }
+                    }
+                }
+
+                .circle-description {
+                    max-width: 650px;
+                }
+            }
+        }
+
+        p {
+            padding: 0 15px;
+        }
+    }
+
+    .circle-container {
+        max-width: 1370px;
+        margin: 0 auto;
+    }
+
+    .outer-circle {
+        padding: 200px 0;
+        background-image: url('../assets/images/circle-background.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+
+        @media (max-width: 1199px){
+            padding: 160px 0;
+        }
+
+        @media (max-width: 991px){
+            padding: 50px 0;
+        }
+
+        @media (max-width: 767px){
+            padding: 200px 0;
+            background-image: url('../assets/images/mobile-circle.png');
+        }
+    }
+
+    .inner-circle-wrapper {
+        margin: 0 auto;
+
+        &.small,
+        .small {
+            width: 675px;
+            height: 675px;
+            transition: all 0.2s;
+            
+            @media (max-width: 767px){
+                width: auto;
+                height: auto;
+                padding: 0 10px;
+            }
+        }
+    }
+
+    .inner-circle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin: 0 auto;
+        border-radius: 50%;
+        background-color: $brand-dark;
+        
+
+        &.small {
+            // &:hover {
+            //     width: 660px;
+            //     height: 660px;
+            //     transition: all 0.2s;
+
+            //     @media (max-width: 767px){
+            //         width: auto;
+            //         height: auto;
+            //     }
+            // }
+        }
+    }
+
+    .circle-title {
+        font-size: 50px;
+        font-family: $font-futura-heavy;
+        text-align: center;
+
+        @media (max-width: 767px){
+            font-size: 32px;
+        }
+        
+    }
+
+    .circle-description {
+        max-width: 400px;
+        margin-bottom: 30px;
+    }
+
+    p {
+        font-size: 18px;
+        color: #fff;
+        text-align: center;
+    }
+
+    a {
+        margin: 0 auto;
+        text-align: center;
+        font-size: 25px;
+    }
+
+
+}

@@ -1,0 +1,101 @@
+
+.recruitment {
+
+    .services-banner {
+        padding-bottom: 410px;
+    }
+
+    .list-slides {
+        padding: 0 0 80px;
+
+        @media (max-width: 767px){
+            padding: 0 0 50px;
+        }
+    }
+
+    .list-slide-container {
+        max-width: 1670px;
+        margin: -410px auto 0;
+
+        @media (max-width: 991px){
+            margin: -355px auto 0;
+        }
+    }
+
+    .roles {
+
+        .roles-container{
+             max-width: 1370px;
+             margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+        }
+       
+        .roles-wrapper {
+            padding-top: 50px;
+
+            @media (max-width: 767px){
+                padding-top: 20px;
+            }
+        }
+
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            @media (max-width: 767px){
+                flex-direction: column;
+            }
+        }
+
+        .role {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            margin: 15px;
+            width: 400px;
+            height: 400px;
+
+            @media (max-width: 1199px){
+                margin: 12px;
+                width: 300px;
+                height: 300px;
+            }
+
+            &.yellow {
+                background-color: $brand-color;
+            }
+
+            &.green {
+                background-color: $green;
+            }
+
+            &.purple {
+                background-color: $purple;
+            }
+
+            p {
+                font-family: $font-futura-heavy;
+                color: #fff;
+                font-size: 28px;
+                text-align: center;
+
+                @media (max-width: 1199px){
+                    font-size: 22px;
+                    line-height: 28px;
+                }
+            }
+
+            img {
+                @media (max-width: 1199px){
+                    width: 150px;
+                }
+            }
+        }
+    }
+}
