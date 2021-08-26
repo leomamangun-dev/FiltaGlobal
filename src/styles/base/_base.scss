@@ -7,6 +7,7 @@
 /**
  * Basic styles for links
  */
+
 a {
   color: $brand-color;
   text-decoration: none;
@@ -31,6 +32,7 @@ a {
 h1 {
   font-size: 72px;
   font-family: $font-futura-heavy;
+  letter-spacing: -0.05em;
 
   @media (max-width: 991px){
     font-size: 60px;
@@ -54,6 +56,7 @@ h2 {
 .section-title {
   font-size: 72px;
   font-family: $font-futura-heavy;
+  letter-spacing: -0.05em;
 
   @media (max-width: 991px){
     font-size: 60px;
@@ -89,33 +92,12 @@ img {
   padding-left: 15px;
 }
 
-.btn {
-  padding: 8px 26px;
-  border-radius: 25px;
-}
-
-.btn-brand {
-  font-family: $font-futura-heavy;
-  color: #fff;
-  background-color: $blue;
-  border-color: $blue;
-
-  &:hover,
-  &:focus {
-    background-color: #0e7bb5;
-    color: #fff;
-  }
-}
-
-.btn-white {
-  font-family: $font-futura-heavy;
-  color: $brand-dark;
-  background-color: #fff;
-  border-color: #fff;
-}
-
 .brand-color {
   color: $brand-color;
+}
+
+.brand-color-dark {
+  color: $brand-dark;
 }
 
 .mobile {

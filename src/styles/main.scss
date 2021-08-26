@@ -28,12 +28,21 @@
 
 // 5. Components
 @import
-  'components/buttons';
+  'components/buttons',
+  'components/services-banner',
+  'components/tabs',
+  'components/circle-section',
+  'components/list-slides',
+  'components/text-section',
+  'components/slider-box';
 
 // 6. Page-specific styles
 @import
   'pages/home',
-  'pages/intern';
+  'pages/intern',
+  'pages/recruitment',
+  'pages/consulting',
+  'pages/outsourcing';
 
 // 7. Themes
 @import

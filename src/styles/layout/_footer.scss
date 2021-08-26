@@ -64,14 +64,6 @@ footer {
 
                 &.has-item {
 
-                    &.active {
-
-                        
-                        &:after {
-                            transform: rotate(90deg);
-                        }
-                    }
-
                     &:after {
                         content: url('../assets/images/footer-arrow.png');
                         position: absolute;

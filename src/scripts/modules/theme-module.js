@@ -13,68 +13,96 @@ AppName.Modules.ThemeModule = (function () {
     var greenCard = $('.card-green')
     var purpleCard = $('.card-purple')
    
-    // $('.video-banner').parent().click(function () {
+    $('.video-banner').parent().click(function () {
 
-    //   if($(this).children(".video-banner").get(0).paused){ 
+      if($(this).children(".video-banner").get(0).paused){ 
 
-    //       $(this).children(".video-banner").get(0).play();
-    //       $(this).children(".playpause").hide();
-    //       console.log(this)
-    //     }else{ 
+          $(this).children(".video-banner").get(0).play();
+          $(this).children(".playpause").hide();
+          console.log(this)
+        }else{ 
 
-    //        $(this).children(".video-banner").get(0).pause();
-    //        $(this).children(".playpause").show();
-    //     }
-    // });
-
-
-
-    // $(".video-banner").on(
-    //   "timeupdate", 
-    //   function(event){
-
-    //     var currentTime = this.currentTime;
-    //     var duration = this.duration;
-
-    //     var percentageCompleted = (currentTime / duration) * 100;
-
-    //     $('.progress').attr('data-value', percentageCompleted);
-    //     updateProgress();
-
-    //     if (percentageCompleted == 100) {
-    //       $('.progress').attr('data-value', 0);
-    //       $('.progress-bar').removeAttr('style');
-    //     }
-    // });
+           $(this).children(".video-banner").get(0).pause();
+           $(this).children(".playpause").show();
+        }
+    });
 
 
+    $(".video-banner").on(
+      "timeupdate", 
+      function(event){
 
-    // function updateProgress() {
-    //   $(".progress").each(function() {
+        var currentTime = this.currentTime;
+        var duration = this.duration;
 
-    //     var value = $(this).attr('data-value');
-    //     var left = $(this).find('.progress-left .progress-bar');
-    //     var right = $(this).find('.progress-right .progress-bar');
+        var percentageCompleted = (currentTime / duration) * 100;
+
+        $('.progress').attr('data-value', percentageCompleted);
+        updateProgress();
+
+        if (percentageCompleted == 100) {
+          $('.progress').attr('data-value', 0);
+          $('.progress-bar').removeAttr('style');
+        }
+    });
+
+
+
+    function updateProgress() {
+      $(".progress").each(function() {
+
+        var value = $(this).attr('data-value');
+        var left = $(this).find('.progress-left .progress-bar');
+        var right = $(this).find('.progress-right .progress-bar');
     
-    //     if (value > 0) {
-    //       if (value <= 50) {
-    //         right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-    //       } else {
-    //         right.css('transform', 'rotate(180deg)')
-    //         left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-    //       }
-    //     }
-    //   })
-    // }
+        if (value > 0) {
+          if (value <= 50) {
+            right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+          } else {
+            right.css('transform', 'rotate(180deg)')
+            left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+          }
+        }
+      })
+    }
 
-    // function onTrackedVideoFrame(currentTime, duration){
-    //   $("#current").text(currentTime); //Change #current to currentTime
-    //   $("#duration").text(duration)
-    // }
+    function onTrackedVideoFrame(currentTime, duration){
+      $("#current").text(currentTime); //Change #current to currentTime
+      $("#duration").text(duration)
+    }
 
-    // function percentageToDegrees(percentage) {
-    //   return percentage / 100 * 360
-    // }
+    function percentageToDegrees(percentage) {
+      return percentage / 100 * 360
+    }
+   
+
+    // Slide Drag
+    if ($('.list-slides-holder').length) {
+      const slider = document.querySelector('.list-slides-holder');
+      let mouseDown = false;
+      let startX, scrollLeft;
+  
+      let startDragging = function (e) {
+        mouseDown = true;
+        startX = e.pageX - slider.offsetLeft;
+        scrollLeft = slider.scrollLeft;
+      };
+      let stopDragging = function (event) {
+        mouseDown = false;
+      };
+  
+      slider.addEventListener('mousemove', (e) => {
+        e.preventDefault();
+        if(!mouseDown) { return; }
+        const x = e.pageX - slider.offsetLeft;
+        const scroll = x - startX;
+        slider.scrollLeft = scrollLeft - scroll;
+      });
+  
+      slider.addEventListener('mousedown', startDragging, false);
+      slider.addEventListener('mouseup', stopDragging, false);
+      slider.addEventListener('mouseleave', stopDragging, false);
+    }
 
     
     // Footer Dropdown
@@ -91,8 +119,6 @@ AppName.Modules.ThemeModule = (function () {
       e.preventDefault();
     });
 
-
-
     // Mobile Nav    
     $('.navbar-toggler').on('click', ()=> {
       if (!$('.nav-contents').hasClass('show')) {
@@ -101,6 +127,7 @@ AppName.Modules.ThemeModule = (function () {
         $('.nav-contents').removeClass('show');
       }
     })
+
 
     // Slick Countries - Homepage
     $('.countries-up').slick({
@@ -139,6 +166,33 @@ AppName.Modules.ThemeModule = (function () {
         el: ".swiper-pagination",
       }
     });
+
+    //Swiper Cards - Resources Section
+
+    const swiperCards = new Swiper(".swiper-box", {
+      effect: "fade",
+      fadeEffect: { crossFade: true },
+      navigation: {
+        nextEl: ".button-next",
+        prevEl: ".button-prev",
+      },
+      on: {
+        init: function () {
+          navColorSetter(this.activeIndex);
+        },
+      },
+    });
+
+    function navColorSetter(index) {
+      if(index % 2 == 0 ) {
+        $('.button-next').addClass('nav-bg-dark');
+        $('.button-prev').addClass('nav-bg-white');
+      } else {
+        $('.button-prev').addClass('nav-bg-white');
+        $('.button-next').addClass('nav-bg-dark');
+      }
+
+    }
 
     // Cards - Homepage
     greyCard.on('click', () => {

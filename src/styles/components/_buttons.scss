@@ -3,3 +3,58 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the button component.
 // -----------------------------------------------------------------------------
+
+
+.btn {
+    padding: 8px 26px;
+    border-radius: 25px;
+    border: 0;
+}
+  
+.btn-brand {
+    font-family: $font-futura-heavy;
+    color: #fff;
+    background-color: $blue;
+
+&:hover,
+&:focus {
+    background-color: $blue;
+    color: #fff;
+    }
+}
+
+.btn-white {
+    font-family: $font-futura-heavy;
+    color: $brand-dark;
+    background-color: #fff;
+}
+
+.hover-round {
+    position: relative;
+    transition-duration: 0.2s;
+    transition-property: color;
+    position: relative;
+    transform: perspective(1px) translateZ(0);
+
+    &:hover {
+        &:before {
+            transform: scale(1);
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $red;
+        transform: scale(0);
+        transition-property: transform;
+        transition-duration: 0.2s;
+        transition-timing-function: ease-out;
+        border-radius: 50px;
+    }
+}
