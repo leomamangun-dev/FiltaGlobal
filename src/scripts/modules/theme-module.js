@@ -13,68 +13,103 @@ AppName.Modules.ThemeModule = (function () {
     var greenCard = $('.card-green')
     var purpleCard = $('.card-purple')
    
-    $('.video-banner').parent().click(function () {
+    // $('.video-banner').parent().click(function () {
 
-      if($(this).children(".video-banner").get(0).paused){ 
+    //   if($(this).children(".video-banner").get(0).paused){ 
 
-          $(this).children(".video-banner").get(0).play();
-          $(this).children(".playpause").hide();
-          console.log(this)
-        }else{ 
+    //       $(this).children(".video-banner").get(0).play();
+    //       $(this).children(".playpause").hide();
+    //       console.log(this)
+    //     }else{ 
 
-           $(this).children(".video-banner").get(0).pause();
-           $(this).children(".playpause").show();
-        }
-    });
-
-
-    $(".video-banner").on(
-      "timeupdate", 
-      function(event){
-
-        var currentTime = this.currentTime;
-        var duration = this.duration;
-
-        var percentageCompleted = (currentTime / duration) * 100;
-
-        $('.progress').attr('data-value', percentageCompleted);
-        updateProgress();
-
-        if (percentageCompleted == 100) {
-          $('.progress').attr('data-value', 0);
-          $('.progress-bar').removeAttr('style');
-        }
-    });
+    //        $(this).children(".video-banner").get(0).pause();
+    //        $(this).children(".playpause").show();
+    //     }
+    // });
 
 
+    // $(".video-banner").on(
+    //   "timeupdate", 
+    //   function(event){
 
-    function updateProgress() {
-      $(".progress").each(function() {
+    //     var currentTime = this.currentTime;
+    //     var duration = this.duration;
 
-        var value = $(this).attr('data-value');
-        var left = $(this).find('.progress-left .progress-bar');
-        var right = $(this).find('.progress-right .progress-bar');
+    //     var percentageCompleted = (currentTime / duration) * 100;
+
+    //     $('.progress').attr('data-value', percentageCompleted);
+    //     updateProgress();
+
+    //     if (percentageCompleted == 100) {
+    //       $('.progress').attr('data-value', 0);
+    //       $('.progress-bar').removeAttr('style');
+    //     }
+    // });
+
+
+
+    // function updateProgress() {
+    //   $(".progress").each(function() {
+
+    //     var value = $(this).attr('data-value');
+    //     var left = $(this).find('.progress-left .progress-bar');
+    //     var right = $(this).find('.progress-right .progress-bar');
     
-        if (value > 0) {
-          if (value <= 50) {
-            right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-          } else {
-            right.css('transform', 'rotate(180deg)')
-            left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-          }
-        }
-      })
-    }
+    //     if (value > 0) {
+    //       if (value <= 50) {
+    //         right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+    //       } else {
+    //         right.css('transform', 'rotate(180deg)')
+    //         left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+    //       }
+    //     }
+    //   })
+    // }
 
-    function onTrackedVideoFrame(currentTime, duration){
-      $("#current").text(currentTime); //Change #current to currentTime
-      $("#duration").text(duration)
-    }
+    // function onTrackedVideoFrame(currentTime, duration){
+    //   $("#current").text(currentTime); //Change #current to currentTime
+    //   $("#duration").text(duration)
+    // }
 
-    function percentageToDegrees(percentage) {
-      return percentage / 100 * 360
-    }
+    // function percentageToDegrees(percentage) {
+    //   return percentage / 100 * 360
+    // }
    
+
+    // Show more - About Us
+    var btn = $('.btn-show');
+    var hidden = $('.hidden');
+
+    btn.on('click',  e => {
+      e.preventDefault();
+      if(hidden.hasClass('collapsed')) {
+        hidden.addClass('expanded');
+        hidden.removeClass('collapsed');
+      } else {
+        hidden.removeClass('expanded');
+        hidden.addClass('collapsed');
+      }
+    });
+
+    // Image Hover - About Us
+
+    $('.team .image img').on('mouseover', function() {
+      var self = this,
+          i = 0,
+          images = $(this).data('mouseover').split(/\s+/);
+      
+        (function nextImage() {
+            var next = images[i++ % images.length].split('#');
+            $(self).data('timeout', setTimeout(function() {
+                self.src = next[0];
+                nextImage();
+            }, next[1]));
+        })();
+        
+    }).on('mouseout', function() {
+        clearTimeout($(this).data('timeout'));
+        this.src = $(this).attr('src');
+    });
 
     // Slide Drag
     if ($('.list-slides-holder').length) {
