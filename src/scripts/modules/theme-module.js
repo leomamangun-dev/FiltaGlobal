@@ -46,8 +46,6 @@ AppName.Modules.ThemeModule = (function () {
     //     }
     // });
 
-
-
     // function updateProgress() {
     //   $(".progress").each(function() {
 
@@ -74,6 +72,22 @@ AppName.Modules.ThemeModule = (function () {
     // function percentageToDegrees(percentage) {
     //   return percentage / 100 * 360
     // }
+
+
+    //Careers Video
+    $('.career-video').parent().click(function () {
+
+      if($(this).children(".career-video").get(0).paused){ 
+
+          $(this).children(".career-video").get(0).play();
+          $(this).children(".play").hide();
+          
+        }else{ 
+
+           $(this).children(".career-video").get(0).pause();
+           $(this).children(".play").show();
+        }
+    });
    
 
     // Show more - About Us

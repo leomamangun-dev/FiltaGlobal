@@ -8,8 +8,18 @@
         .image-wrapper {
             padding: 100px 0 50px;
 
+            @media (max-width: 1440px){
+                text-align: center;
+            }
+
             @media (max-width: 991px){
                 padding: 0px 0 50px;
+            }
+
+            img {
+                @media (max-width: 1440px){
+                    max-width: 80%;
+                }
             }
         }
     }

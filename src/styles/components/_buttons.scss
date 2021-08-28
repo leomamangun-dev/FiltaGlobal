@@ -29,6 +29,16 @@
     background-color: #fff;
 }
 
+.btn-yellow {
+    font-family: $font-futura-heavy;
+    color: #fff;
+    background-color:  $brand-color;
+
+    &:hover {
+        color: #fff;
+    }
+}
+
 .hover-round {
     position: relative;
     transition-duration: 0.2s;
