@@ -1,0 +1,279 @@
+.press-and-awards {
+
+
+    .press-banner {
+        padding-top: 95px;
+        background-color: $brand-dark;
+        background-image: url('../assets/images/line-press.png');
+        background-position: bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+
+        .press-container {
+            max-width: 1750px;
+            padding: 0 15px;
+            margin: 0 auto;
+        }
+
+        .content {
+            display: flex;
+
+            @media (max-width: 767px){
+                flex-direction: column-reverse;
+                padding-top: 30px;
+            }
+
+            .image {
+                padding-top: 60px;
+                width: 50%;
+
+                @media (max-width: 767px){
+                    width: 100%;
+                }
+            }
+
+            .text {
+                display: flex;
+                align-items: center;
+                width: 50%;
+
+                @media (max-width: 767px){
+                    width: 100%;
+                    justify-content: center;
+                }
+
+                h1 {
+                   padding-left: 15%;
+                   font-size: 7.5vw;
+                   line-height: 7vw;
+                   color: #fff;
+
+                   @media (max-width: 767px){
+                        padding-left: 0;
+                        font-size: 60px;
+                        line-height: 60px;
+                   }
+                }
+            }
+        }
+    }
+
+
+    .featured-in {
+        position: relative;
+        padding: 100px 0;
+        margin-top: 200px;
+        background-color: $brand-dark;
+
+        @media (max-width: 991px){
+            padding: 60px 0;
+        }
+
+        @media (max-width: 767px){
+            margin-top: 100px;
+            padding: 0 0 60px;
+        }
+        
+        .featured-in-title {
+            position: absolute;
+            top: -60px;
+            left: 50%;
+            padding: 5px 50px;
+            width: fit-content;
+            background-color: $brand-color;
+            border-radius: 20px;
+            transform: translateX(-50%);
+
+            @media (max-width: 767px){
+                position: relative;
+                top: 0;
+                left: 0;
+                padding: 40px 15px;
+                margin-bottom: 50px;
+                width: 100%;
+                border-radius: 0;
+                transform: none;
+            } 
+
+            p {
+                margin: 0;
+                font-family: $font-futura-heavy;
+                font-size: 75px;
+                color: #fff;
+                text-align: center;
+
+                @media (max-width: 991px){
+                    font-size: 60px;
+                }   
+               
+               @media (max-width: 767px){
+                    font-size: 45px;
+               }  
+            }
+        }
+
+        .logo-wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-bottom: 25px;
+            border-bottom: dotted 2px #fff;
+
+            @media (max-width: 767px){
+                padding-bottom: 0;
+                border-bottom: 0;
+            }
+
+            @media (max-width: 767px){
+                display: block;
+                text-align: center;
+            } 
+
+            .image-wrapper {
+                padding: 10px;
+            }
+        }
+    }
+
+    .awards {
+
+        .container {
+            text-align: center;
+
+            @media (max-width: 991px){
+                max-width: 100%;
+                padding: 0;
+            } 
+        }
+
+        .logo {
+            padding: 100px 0 40px;
+
+            @media (max-width: 991px){
+                padding: 70px 0 40px;
+                background-color: $brand-color;
+            } 
+            
+            @media (max-width: 767px){
+                padding: 50px 0 0px;
+            } 
+
+            img {
+                max-width: 500px;
+
+                @media (max-width: 767px){
+                    max-width: 70%;
+                } 
+            }
+        }
+
+        a {
+            color: $brand-dark;
+
+            &:hover,
+            &:focus {
+                color: $brand-dark;
+                text-decoration: none;
+            }
+        }
+
+        .title-box {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 70%;
+            padding: 30px 0 170px;
+            transform: translateX(-50%);
+            background-color: $brand-color;
+
+            @media (max-width: 991px){
+                width: 100%;
+            } 
+            
+            p {
+                margin: 0;
+                color: #fff;
+            }
+        }
+
+        .awards-list {
+            position: relative;
+            max-width: 1280px;
+            padding-top: 130px;
+            margin: 0 auto;
+
+            @media (max-width: 991px){
+                padding-top: 100px;
+            } 
+            
+            .awards-box {
+                padding: 20px 15px;
+
+                .content {
+                    display: flex;
+                    justify-content: center;
+                    border: solid 4px $green;
+                    padding: 30px;
+                    border-radius: 50px;
+                    overflow: hidden;
+                    background-color: #fff;
+                    transition: all 0.3s;
+
+                    @media (max-width: 767px){
+                        display: block;
+                    } 
+                   
+                    &:hover {
+                        box-shadow: -1px 6px 18px -3px rgba(0,0,0,0.29);
+                        transition: all 0.3s;
+                    }
+
+                    .image {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+
+                        img {
+                            max-width: 200px;
+
+                            @media (max-width: 1199px){
+                                max-width: 150px;
+                            }
+                        }
+                    }
+
+                    .description {
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        flex-direction: column;
+                    }
+                }
+
+            }
+
+            .description {
+                .place {
+                    font-family: $font-futura-heavy;
+                    font-size: 90px;
+                    line-height: 80px;
+
+                    @media (max-width: 1199px){
+                        font-size: 60px;
+                        line-height: 65px;
+                    }
+                }
+
+                span {
+                    @media (max-width: 1199px){
+                        font-size: 14px;
+                    }
+
+                    @media (max-width: 767px){
+                        font-size: 18px;
+                    }
+                }    
+            }
+        }
+    }
+}
