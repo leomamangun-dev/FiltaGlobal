@@ -1,0 +1,118 @@
+.splash-screen {
+    position: fixed;
+    z-index: 1050;
+    background-color: $brand-dark;
+    width: 100%;
+    height: 100%;
+
+    .loading {
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .text {
+        position: relative;
+        color: $brand-color;
+        display: inline-block;
+        margin-right: 8px;
+        
+        img {
+            width: 200px;
+            max-width: 100%;
+        }
+    }
+      
+    .bounceball {
+        position: relative;
+        top: -10px;
+        display: inline-block;
+        width: 23px;
+        height: 23px;
+
+        &:before {
+            position: absolute;
+            content: '';
+            display: block;
+            top: 0;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            background-color: $brand-color;
+            transform-origin: 50%;
+            animation: bounce 500ms alternate infinite ease;
+        }
+
+        &.paused {
+            &:before {
+                animation: spread 3s alternate ease;
+            }
+        }
+    }
+
+
+    .bounceball-i {
+        position: absolute;
+        left: 22%;
+        display: inline-block;
+        width: 23px;
+        height: 23px;
+
+        &:before {
+            position: absolute;
+            content: '';
+            display: block;
+            top: 0;
+            width: 23px;
+            height: 23px;
+            border-radius: 50%;
+            background-color: $brand-color;
+            transform-origin: 50%;
+            animation: bounceOnce 1s alternate ease;
+        }
+    }
+}
+  
+@keyframes bounce {
+    0% {
+        top: 70px;
+        height: 5px;
+        border-radius: 60px 60px 60px 60px;
+        transform: scaleX(3);
+    }
+    35% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+    100% {
+        top: 0;
+    }
+}
+
+@keyframes spread {
+    100% {
+        top: 70px;
+        height: 5px;
+        border-radius: 60px 60px 60px 60px;
+        transform: scale(1000);
+    }
+}
+
+@keyframes bounceOnce {
+    0% {
+        top: -250px;
+        height: 5px;
+        border-radius: 60px 60px 60px 60px;
+        transform: scaleX(3);
+    }
+    35% {
+        height: 20px;
+        border-radius: 50%;
+        transform: scaleX(1);
+    }
+    100% {
+        top: 0;
+    }
+}

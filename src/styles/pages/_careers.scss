@@ -1,0 +1,466 @@
+.careers {
+
+    .careers-banner {
+        margin-bottom: 120px;
+        padding-top: 95px;
+        background-color: $brand-dark;
+
+        border-bottom-left-radius: 37px;
+        border-bottom-right-radius: 37px;
+
+        @media (max-width: 991px){
+            margin-bottom: 30px;
+        }
+
+        a {
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+
+        .careers-container {
+            position: relative;
+            max-width: 1370px;
+            margin: 0 auto;
+            padding-left: 15px;
+            padding-right: 15px;
+
+            @media (max-width: 991px){
+                padding: 0;
+            }
+
+            .row {
+                margin: 0;
+                justify-content: space-between;
+            }
+        }
+        
+        h1 {
+            padding: 100px 0 350px;
+            color: #fff;
+            text-align: center;
+
+            @media (max-width: 991px){
+                padding: 70px 0 50px;
+            }
+        }
+
+        .image-wrapper {
+            position: absolute;
+            bottom: -45px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+
+            @media (max-width: 991px){
+                position: relative;
+                bottom: 0;
+            }
+
+            .item {
+                padding-left: 10px;
+                padding-right: 10px;
+
+                @media (max-width: 991px){
+                    padding: 0;
+                }
+            }
+
+            .item-inner {
+                display: flex;
+                justify-content: space-between;
+                flex-direction: column;
+                height: 100%;
+
+                @media (max-width: 991px){
+                    padding: 0 50px;
+                    flex-direction: row;
+                }
+
+                @media (max-width: 767px){
+                    padding: 0 15px;
+                    
+                }
+
+                .image {
+                    text-align: center;
+
+                    @media (max-width: 991px){
+                        padding-top: 20px;
+                    }
+                   
+                    img {
+                        max-width: 70%;
+                        margin: 0 auto;
+                    }
+
+                    .desktop {
+                        display: block;
+
+                        @media (max-width: 767px){
+                            display: none;
+                        }
+                    }
+
+                    .mobile {
+                        display: none;
+
+                        @media (max-width: 767px){
+                            display: block;
+                        }
+                    }
+                }
+                
+                .title {
+
+                    @media (max-width: 991px){
+                        display: flex;
+                        align-items: center;
+                    }
+
+                    p {
+                        text-align: center;
+                        padding-top: 35px;
+                        padding-bottom: 5px;
+                        font-family: $font-futura-heavy;
+                        color: #fff;
+                        font-size: 35px;
+                        line-height: 40px;
+                        letter-spacing: -0.05em;
+    
+                        @media (max-width: 1199px){
+                            font-size: 30px;
+                        }
+    
+                        @media (max-width: 991px){
+                            padding: 0;
+                            margin: 0;
+                            text-align: left;
+                        }
+
+                        @media (max-width: 767px){
+                            font-size: 25px;
+                        }
+                    }
+                }
+            }
+
+            .yellow {
+                background-color: $brand-color;
+            }
+            
+            .green {
+                background-color: $green;
+            }
+
+            .purple {
+                background-color: $purple;
+            }
+
+            .red {
+                background-color: $red;
+            }
+        }
+    }
+
+
+    .job-listings {
+        padding-top: 50px;
+        padding-bottom: 150px;
+
+        @media (max-width: 991px){
+            padding-bottom: 70px;
+        }
+
+        .section-title {
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .cards-wrapper {
+
+            .cards {
+                margin-bottom: 30px;
+
+                .card-inner {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-direction: column;
+                    height: 100%;
+                    padding: 30px;
+                    background-color:$very-light-grey;
+                    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.2);
+                    border-radius: 26px;
+                }
+
+                .details {
+                    @media (max-width: 1199px){
+                        padding-bottom: 10px;
+                    }
+                }
+                    
+                .job-title {
+                    margin: 0;
+                    padding-bottom: 10px;
+                    font-family: $font-futura-heavy;
+                    font-size: 32px;
+                    line-height: 42px;
+                    letter-spacing: -0.05em;
+
+                    @media (max-width: 1199px){
+                        font-size: 28px;
+                        line-height: 36px;
+                    }
+                }
+
+                .location {
+                    margin: 0;
+                    font-size: 18px;
+
+                    @media (max-width: 1199px){
+                        font-size: 18px;
+                    }
+                }
+
+                .type {
+                    margin: 0;
+                    font-size: 18px;
+                }
+
+                .btn-wrapper {
+                    text-align: right;
+                }
+            }
+        }
+    }
+
+
+
+    .careers-videos {
+        @media ( max-width: 767px ) {
+            padding-bottom: 50px;
+        }
+
+        .video-wrappper {
+            display: flex;
+            border-radius: 65px;
+            overflow: hidden;
+            background-color: $brand-dark;
+
+            @media ( max-width: 767px ) {
+                flex-direction: column-reverse;
+                border-radius: 18px;
+            }
+
+            .left-videos {
+                width: 30%;
+                
+                @media ( max-width: 767px ) {
+                    display: flex;
+                    width: 100%;
+                }
+
+                .video-holder {
+                    padding-top: 66.5%;
+
+                     @media ( max-width: 767px ) {
+                        width: 50%;
+                        padding-top: 57%;
+                    }
+                }
+            }
+
+            .right-videos {
+                width: 70%;
+
+                @media ( max-width: 767px ) {
+                    width: 100%;
+                }
+
+                .video-holder {
+                    padding-top: 57%;
+                }
+            }
+
+            .video-holder {
+                position: relative;
+
+                video#id-careers-video {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                &:hover {
+                    
+                    .play {
+                        opacity: 0.7;
+                        transition: all 0.3s;
+                    }
+                }
+
+                .play {
+                    opacity: 0;
+                    background-image: url(../assets/images/play.png);
+                    background-repeat: no-repeat;
+                    width: 20%;
+                    height: 20%;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    top: 0;
+                    bottom: 0;
+                    margin: auto;
+                    background-size: contain;
+                    background-position: center;
+                    transition: all 0.3s;
+                    cursor: pointer;
+
+                    @media ( max-width: 991px ) {
+                        opacity: 0.7;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .feedbacks {
+        margin-bottom: 150px;
+        overflow: hidden;
+        background-color: $semi-dark-grey;
+        z-index: 0;
+        
+        @media (max-width: 767px){
+            margin-bottom: 50px;
+        }
+
+        .feedbacks-wrapper {
+            display: flex;
+            flex-wrap: nowrap;
+            overflow-x: scroll;
+            min-height: 500px;
+            padding: 70px 0 120px;
+            -ms-overflow-style: none; 
+            -ms-overflow-style: none; 
+            scrollbar-width: none;
+            background-image: url("../assets/images/slide-line.png");
+            background-repeat: no-repeat;
+            background-position-y: bottom;
+            background-attachment:local;
+
+            @media (max-width: 767px){
+                background-image: none;
+                padding: 50px 0 50px;
+                min-height: 400px;
+            }
+            
+            &::-webkit-scrollbar {
+                display: none;
+            }
+
+            .item {
+                padding: 40px;
+                min-width: 450px;
+
+                @media (max-width: 767px){
+                    padding: 20px;
+                    min-width: 320px;
+                }
+
+                &:nth-of-type(even) {
+                    margin-top: 50px;
+
+                    @media (max-width: 767px){
+                        margin-top: 0;
+                    }
+                }
+            }
+
+            .talk-bubble {
+                display: inline-block;
+                position: relative;
+                padding: 25px 20px;
+                margin-bottom: 45px;
+                max-width: 400px;
+                height: auto;
+                background-color: #1a1a1a;
+                border-radius: 26px;
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    left: 55px;
+                    bottom: -30px;
+                    width: 38px;
+                    height: 50px;
+                    background-image: url(../assets/images/talk-tail.png);
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: 35px;
+                }
+
+                .talktext {
+                    p {
+                        margin: 0;
+                        text-align: center;
+                        font-size: 18px;
+                        color: #fff;
+
+                        @media (max-width: 767px){
+                            font-size: 16px;
+                        }
+                    }
+                }
+            }
+
+            .employee {
+                max-width: 400px;
+                display: flex;
+
+                .image {
+                    padding-left: 25px;
+                    
+                    .image-wrapper {
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        img {
+                            width: 98px;
+                            height: 98px;
+                        }
+                    }
+                }
+
+
+                .details {
+                    display: flex;
+                    align-items: center;
+                    padding-left: 30px;
+
+                    .name {
+                        margin: 0;
+                        font-family: $font-futura-heavy;
+                        color: $brand-color;
+                        font-size: 26px;
+                        letter-spacing: -0.05em;
+                    }
+
+                    .position {
+                        margin: 0;
+                        font-size: 16px;
+                        letter-spacing: -0.05em;
+                    }
+                }
+            }
+        }
+
+
+    }
+
+
+}
