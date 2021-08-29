@@ -74,19 +74,37 @@ AppName.Modules.ThemeModule = (function () {
     // }
 
 
-    //Careers Video
+    // Anchor Tag - Smooth Scroll
+    $(document).on('click', '.smooth-scroll', function (event) {
+      event.preventDefault();
+  
+      $('html, body').animate({
+          scrollTop: $($.attr(this, 'href')).offset().top - 100
+      }, 600);
+    });
+
+
+    // Careers Video
     $('.career-video').parent().click(function () {
-
-      if($(this).children(".career-video").get(0).paused){ 
-
-          $(this).children(".career-video").get(0).play();
-          $(this).children(".play").hide();
-          
+      if($(this).children(".career-video").hasClass('side-videos')){ 
+        var link = $(this).children(".career-video").attr('src');
+        var mainLink = $(".career-video.main").attr('src');
+        $(".career-video.main").attr('src', link);
+        $(this).children(".career-video").attr('src', mainLink);
+        $(".career-video.main").get(0).play();
+        $(".play.main").hide();
+      } else if($(this).children(".career-video").hasClass('main')){
+        if($(".career-video.main").get(0).paused){ 
+          $(".career-video.main").get(0).play();
+          $(".play.main").hide();
         }else{ 
-
-           $(this).children(".career-video").get(0).pause();
-           $(this).children(".play").show();
+          $(".career-video.main").get(0).pause();
+          $(".play.main").show();
         }
+      } else{ 
+         $(this).children(".career-video").get(0).pause();
+         $(this).children(".play.side-videos").show();
+      }
     });
    
 
