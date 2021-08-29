@@ -18,6 +18,10 @@ AppName.Modules.ThemeModule = (function () {
       }, 2000);
     });
 
+    $("img.lazy").lazyload( {
+      effect: "fadeIn"
+    });
+
     // Scroll Cards
     if ($('main').hasClass('home')) {
 
@@ -83,9 +87,11 @@ AppName.Modules.ThemeModule = (function () {
     btn.on('click',  e => {
       e.preventDefault();
       if(hidden.hasClass('collapsed')) {
+        btn.text('Show less')
         hidden.addClass('expanded');
         hidden.removeClass('collapsed');
       } else {
+        btn.text('Show more')
         hidden.removeClass('expanded');
         hidden.addClass('collapsed');
       }
