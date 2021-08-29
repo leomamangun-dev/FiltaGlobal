@@ -8,106 +8,74 @@ AppName.Modules.ThemeModule = (function () {
   const _privateMethod = () => {
     // private stuff
 
-    var greyCard = $('.card-grey')
-    var yellowCard = $('.card-yellow')
-    var greenCard = $('.card-green')
-    var purpleCard = $('.card-purple')
-   
-    // $('.video-banner').parent().click(function () {
 
-    //   if($(this).children(".video-banner").get(0).paused){ 
+    $(window).on('load', function(){
+      setTimeout(function () {
+            $('.bounceball').addClass('paused');
+            setTimeout(function () {
+              $('.splash-screen').fadeOut();
+            }, 500);
+      }, 2000);
+    });
 
-    //       $(this).children(".video-banner").get(0).play();
-    //       $(this).children(".playpause").hide();
-    //       console.log(this)
-    //     }else{ 
+    // Scroll Cards
+    if ($('main').hasClass('home')) {
 
-    //        $(this).children(".video-banner").get(0).pause();
-    //        $(this).children(".playpause").show();
-    //     }
-    // });
+        var windowSize = $(window).width();
 
-
-    // $(".video-banner").on(
-    //   "timeupdate", 
-    //   function(event){
-
-    //     var currentTime = this.currentTime;
-    //     var duration = this.duration;
-
-    //     var percentageCompleted = (currentTime / duration) * 100;
-
-    //     $('.progress').attr('data-value', percentageCompleted);
-    //     updateProgress();
-
-    //     if (percentageCompleted == 100) {
-    //       $('.progress').attr('data-value', 0);
-    //       $('.progress-bar').removeAttr('style');
-    //     }
-    // });
-
-    // function updateProgress() {
-    //   $(".progress").each(function() {
-
-    //     var value = $(this).attr('data-value');
-    //     var left = $(this).find('.progress-left .progress-bar');
-    //     var right = $(this).find('.progress-right .progress-bar');
-    
-    //     if (value > 0) {
-    //       if (value <= 50) {
-    //         right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
-    //       } else {
-    //         right.css('transform', 'rotate(180deg)')
-    //         left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
-    //       }
-    //     }
-    //   })
-    // }
-
-    // function onTrackedVideoFrame(currentTime, duration){
-    //   $("#current").text(currentTime); //Change #current to currentTime
-    //   $("#duration").text(duration)
-    // }
-
-    // function percentageToDegrees(percentage) {
-    //   return percentage / 100 * 360
-    // }
-
-
-    // Anchor Tag - Smooth Scroll
-    $(document).on('click', '.smooth-scroll', function (event) {
-      event.preventDefault();
+        if (windowSize > 767) {
+          var controller = new ScrollMagic.Controller();
+          
+          var wipeAnimation = new TimelineMax()
+            .fromTo(".item.card-1.card-grey", 1, {x: "0"}, {
+              x: (windowSize > 1199) ? "-94%" : (windowSize <= 1199 && windowSize > 991) ? "-92%" : (windowSize <= 991) ? "-90%" : "0" },
+              "+=1")  
+            .fromTo(".item.card-1.card-yellow", 1, {x:  "0"}, {
+              x: (windowSize > 1199) ? "-94%" : (windowSize <= 1199 && windowSize > 991) ? "-92%" : (windowSize <= 991) ? "-90%" : "0" },
+              "+=2")  
+            .fromTo(".item.card-1.card-green", 1, {x: "0"}, {
+              x: (windowSize > 1199) ? "-94%" : (windowSize <= 1199 && windowSize > 991) ? "-92%" : (windowSize <= 991) ? "-90%" : "0" },
+              "+=2")
+            .fromTo(".item.card-1.card-purple", 1, {x: "0"}, {x: "0"}, "+=2"); 
+      
+          new ScrollMagic.Scene({
+              triggerElement: "#pinContainer",
+              triggerHook: 0,
+              duration: "900%",
+              offset: -100
+            })
+            .setPin("#pinContainer")
+            .setTween(wipeAnimation)
+            .addTo(controller);
   
-      $('html, body').animate({
-          scrollTop: $($.attr(this, 'href')).offset().top - 100
-      }, 600);
-    });
-
-
-    // Careers Video
-    $('.career-video').parent().click(function () {
-      if($(this).children(".career-video").hasClass('side-videos')){ 
-        var link = $(this).children(".career-video").attr('src');
-        var mainLink = $(".career-video.main").attr('src');
-        $(".career-video.main").attr('src', link);
-        $(this).children(".career-video").attr('src', mainLink);
-        $(".career-video.main").get(0).play();
-        $(".play.main").hide();
-      } else if($(this).children(".career-video").hasClass('main')){
-        if($(".career-video.main").get(0).paused){ 
-          $(".career-video.main").get(0).play();
-          $(".play.main").hide();
-        }else{ 
-          $(".career-video.main").get(0).pause();
-          $(".play.main").show();
+        } else {
+  
+          var controller = new ScrollMagic.Controller();
+          
+          var wipeAnimation = new TimelineMax()
+            .fromTo(".item.card-1.card-grey", 1, {y: "0"}, {
+              y: "-94%" },
+              "+=1")  
+            .fromTo(".item.card-1.card-yellow", 1, {y:  "0"}, {
+              y: "-94%" },
+              "+=2")  
+            .fromTo(".item.card-1.card-green", 1, {y: "0"}, {
+              y: "-94%" },
+              "+=2")
+            .fromTo(".item.card-1.card-purple", 1, {x: "0"}, {x: "0"}, "+=2"); 
+      
+          new ScrollMagic.Scene({
+              triggerElement: "#pinContainer",
+              triggerHook: 0,
+              duration: "900%",
+              offset: -100
+            })
+            .setPin("#pinContainer")
+            .setTween(wipeAnimation)
+            .addTo(controller);
         }
-      } else{ 
-         $(this).children(".career-video").get(0).pause();
-         $(this).children(".play.side-videos").show();
-      }
-    });
+    }
    
-
     // Show more - About Us
     var btn = $('.btn-show');
     var hidden = $('.hidden');
@@ -260,55 +228,125 @@ AppName.Modules.ThemeModule = (function () {
 
     }
 
-    // Cards - Homepage
-    greyCard.on('click', () => {
-      var closed = greyCard.hasClass('card-close');
+     
+    // $('.video-banner').parent().click(function () {
 
-      if (closed || yellowCard.hasClass('card-close') || greenCard.hasClass('card-close')) {
-        greyCard.removeClass('card-close');
-        yellowCard.removeClass('card-close');
-        greenCard.removeClass('card-close');
-      }
-    });
+    //   if($(this).children(".video-banner").get(0).paused){ 
+
+    //       $(this).children(".video-banner").get(0).play();
+    //       $(this).children(".playpause").hide();
+    //       console.log(this)
+    //     }else{ 
+
+    //        $(this).children(".video-banner").get(0).pause();
+    //        $(this).children(".playpause").show();
+    //     }
+    // });
+
+
+    // $(".video-banner").on(
+    //   "timeupdate", 
+    //   function(event){
+
+    //     var currentTime = this.currentTime;
+    //     var duration = this.duration;
+
+    //     var percentageCompleted = (currentTime / duration) * 100;
+
+    //     $('.progress').attr('data-value', percentageCompleted);
+    //     updateProgress();
+
+    //     if (percentageCompleted == 100) {
+    //       $('.progress').attr('data-value', 0);
+    //       $('.progress-bar').removeAttr('style');
+    //     }
+    // });
+
+    // function updateProgress() {
+    //   $(".progress").each(function() {
+
+    //     var value = $(this).attr('data-value');
+    //     var left = $(this).find('.progress-left .progress-bar');
+    //     var right = $(this).find('.progress-right .progress-bar');
     
-    yellowCard.on('click', () => {
-      var closed = yellowCard.hasClass('card-close');
+    //     if (value > 0) {
+    //       if (value <= 50) {
+    //         right.css('transform', 'rotate(' + percentageToDegrees(value) + 'deg)')
+    //       } else {
+    //         right.css('transform', 'rotate(180deg)')
+    //         left.css('transform', 'rotate(' + percentageToDegrees(value - 50) + 'deg)')
+    //       }
+    //     }
+    //   })
+    // }
 
-      if (closed || greenCard.hasClass('card-close')) {
-        yellowCard.removeClass('card-close');
-        greenCard.removeClass('card-close');
-      } else {
-        greyCard.addClass('card-close');
-      }
-    });
+    // function onTrackedVideoFrame(currentTime, duration){
+    //   $("#current").text(currentTime); //Change #current to currentTime
+    //   $("#duration").text(duration)
+    // }
 
-    greenCard.on('click', () => {
-      var closed = greenCard.hasClass('card-close');
+    // function percentageToDegrees(percentage) {
+    //   return percentage / 100 * 360
+    // }
 
-      if (closed) {
-        greenCard.removeClass('card-close');
-      } else {
 
-        if(!yellowCard.hasClass('card-close') || !greyCard.hasClass('card-close')) {
-           yellowCard.addClass('card-close');
-           greyCard.addClass('card-close');
-        } else {
-          yellowCard.addClass('card-close');
-        }
-      }
-    });
+    // Cards - Homepage
 
-   purpleCard.on('click', () => {
-    if(!yellowCard.hasClass('card-close') || !greyCard.hasClass('card-close') || !greenCard.hasClass('card-close')) {
+    // var greyCard = $('.card-grey')
+    // var yellowCard = $('.card-yellow')
+    // var greenCard = $('.card-green')
+    // var purpleCard = $('.card-purple')
 
-      yellowCard.addClass('card-close');
-      greyCard.addClass('card-close');
-      greenCard.addClass('card-close');
+    // if (windowSize < 767 ) { 
+    //   greyCard.on('click', () => {
+    //     var closed = greyCard.hasClass('card-close');
 
-    } else {
-        greenCard.addClass('card-close');
-    }
-   });
+    //     if (closed || yellowCard.hasClass('card-close') || greenCard.hasClass('card-close')) {
+    //       greyCard.removeClass('card-close');
+    //       yellowCard.removeClass('card-close');
+    //       greenCard.removeClass('card-close');
+    //     }
+    //   });
+    
+    //   yellowCard.on('click', () => {
+    //     var closed = yellowCard.hasClass('card-close');
+
+    //     if (closed || greenCard.hasClass('card-close')) {
+    //       yellowCard.removeClass('card-close');
+    //       greenCard.removeClass('card-close');
+    //     } else {
+    //       greyCard.addClass('card-close');
+    //     }
+    //   });
+
+    //   greenCard.on('click', () => {
+    //     var closed = greenCard.hasClass('card-close');
+
+    //     if (closed) {
+    //       greenCard.removeClass('card-close');
+    //     } else {
+
+    //       if(!yellowCard.hasClass('card-close') || !greyCard.hasClass('card-close')) {
+    //         yellowCard.addClass('card-close');
+    //         greyCard.addClass('card-close');
+    //       } else {
+    //         yellowCard.addClass('card-close');
+    //       }
+    //     }
+    //   });
+
+    //   purpleCard.on('click', () => {
+    //     if(!yellowCard.hasClass('card-close') || !greyCard.hasClass('card-close') || !greenCard.hasClass('card-close')) {
+
+    //       yellowCard.addClass('card-close');
+    //       greyCard.addClass('card-close');
+    //       greenCard.addClass('card-close');
+
+    //     } else {
+    //         greenCard.addClass('card-close');
+    //     }
+    //   });
+    // }
 
     // var feed = new Instafeed({
     //   accessTokenTimeout: 5000,

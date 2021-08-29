@@ -34,6 +34,18 @@
     </div>
   <![endif]-->
 
+  <div class="splash-screen">
+    <div class="loading">
+      <div class="loading-items">
+        <div class="text">
+          <div class="bounceball-i"></div>
+          <img src=".\assets\images\splash-static-2.png">
+        </div>
+        <div class="bounceball"></div>
+      </div>
+    </div>
+  </div>
+
   <header>
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="nav-container container">
@@ -99,7 +111,6 @@
           <div class="banner-video">
 
             <div class="video-wrappper">
-
 
               <video id="homepage_video_banner" 
                     class="rounded-circle show video-banner"
@@ -213,8 +224,9 @@
     </section>
 
     <section class="help-cards">
-      <div class="cards-wrapper">
+      <div id="pinContainer" class="cards-wrapper">
 
+        
         <div class="item card-1 card-grey">
           <div class="card-content">
             <div class="text">
@@ -439,10 +451,15 @@
   </footer>
 
   <!-- build:js scripts/main.min.js -->
+  
   <script src="./scripts/vendors/jquery.min.js"></script>
   <script src="./scripts/vendors/popper.min.js"></script>
   <script src="./scripts/vendors/bootstrap.min.js"></script>
   <script src="./scripts/vendors/swiper.min.js"></script>
+  <script src="./scripts/vendors/tweenmax.min.js"></script>
+  <script src="./scripts/vendors/timelinemax.min.js"></script>
+  <script src="./scripts/vendors/scrollmagic.js"></script>
+  <script src="./scripts/vendors/animation.gasp.js"></script>
   <script src="./scripts/vendors/slick.min.js"></script>
   <script src="./scripts/vendors/videojs.js"></script>
   <script src="./scripts/core/base.js"></script>

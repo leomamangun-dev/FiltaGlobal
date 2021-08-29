@@ -116,6 +116,22 @@ img {
   }
 }
 
+.loader {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  p {
+      display: block;
+      padding-top: 10px;
+      font-family: $font-futura-heavy;
+      font-size: 18px;
+      color: $brand-color;
+  }
+}
+
 /**
  * Basic styles for input fields
  */
